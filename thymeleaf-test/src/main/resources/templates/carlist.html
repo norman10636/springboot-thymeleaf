@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<h1>Car list</h1>
+		<table border="1">
+			<tr>
+				<th>name</th>
+				<th>createTime</th>
+				<th>photo</th>								
+			</tr>
+			<tr th:each="car, iterstat : ${carlist}">
+				<td th:text="${car.name}"></td>
+				<td th:text="${#dates.format(car.createTime,'MM/dd/yyyy')}"></td>
+				<td><img th:src="@{'/images/'+${car.photo}}"/></td>
+			</tr>						
+		</table>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<h1>Car info</h1>
+		<table>
+			<tr>
+				<th>name</th>
+				<td><span th:text="${car.name}"></span></td>		
+			</tr>
+			<tr>
+				<th>create time</th>
+				<td><span th:text="${#dates.format(car.createTime,'MM/dd/yyyy')}"></span></td>		
+			</tr>
+			<tr>
+				<th>photo</th>
+				<td><img th:src="@{'/images/'+${car.photo}}"/></td>		
+			</tr>			
+		</table>
+	</body>
+</html>
